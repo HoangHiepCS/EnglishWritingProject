@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soccer Is More Than a Game</title>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --card: rgba(255,255,255,0.08);
+      --text: #f5f7fb;
+      --muted: #cfd6e4;
+      --accent: #8be28b;
+      --border: rgba(255,255,255,0.14);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b0e13 0%, #101722 50%, #0b0e13 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(7,10,15,0.62), rgba(7,10,15,0.72)),
+        url('images/8.png') center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 40px 28px;
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      color: #08110a;
+      background: var(--accent);
+      font-weight: bold;
+      padding: 12px 22px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139,226,139,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      background: #1a2230;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .split img {
+      width: 100%;
+      border-radius: 24px;
+      min-height: 380px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      background: #1a2230;
+    }
+
+    .text-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .text-box h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 14px;
+    }
+
+    .text-box p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .quote {
+      text-align: center;
+      padding: 100px 20px;
+      background:
+        linear-gradient(rgba(8,12,18,0.72), rgba(8,12,18,0.82)),
+        url('images/9.png') center/cover no-repeat;
+      margin-top: 40px;
+    }
+
+    .quote blockquote {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      line-height: 1.25;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 20px 40px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 820px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding: 32px 20px;
+      }
+
+      .card img {
+        height: 220px;
+      }
+
+      .split img {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Multimodal Composition Project</div>
+      <h1>Soccer Is More Than a Game</h1>
+      <p>
+        Soccer is not only about rules, goals, and trophies. It is about emotion, identity,
+        memory, and the way one sport can unite millions of people across the world.
+      </p>
+      <a class="button" href="#story">Scroll to Explore</a>
+    </div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="section-header">
+      <h2>Where It Begins</h2>
+      <p>
+        Soccer does not need a perfect field or an expensive stadium. It can begin in the
+        street, in a schoolyard, or in any open space where people bring their passion.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <img src="images/1.png" alt="Kids playing soccer in the street" />
+        <div class="card-content">
+          <h3>It Starts Anywhere</h3>
+          <p>For many people, soccer begins with imagination, friendship, and a simple ball.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/2.png" alt="Crowd cheering in a soccer stadium" />
+        <div class="card-content">
+          <h3>Shared Passion</h3>
+          <p>From local matches to world tournaments, soccer creates collective energy and excitement.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/3.png" alt="Soccer player celebrating a goal" />
+        <div class="card-content">
+          <h3>Moments of Joy</h3>
+          <p>One goal can create a memory that players and fans remember for years.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <img src="images/4.png" alt="Soccer player waiting for a VAR decision" />
+      <div class="text-box">
+        <h2>VAR: Fairness vs Emotion</h2>
+        <p>
+          Modern soccer is also shaped by technology. The Video Assistant Referee, or VAR,
+          helps referees review important decisions such as goals, penalties, and red cards.
+        </p>
+        <p>
+          While VAR can improve fairness and reduce mistakes, it also interrupts the flow of the game.
+          A beautiful moment of celebration can suddenly become a pause filled with uncertainty.
+        </p>
+        <p>
+          This tension reveals something important: soccer is not only about being correct. It is also about feeling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>The Emotional Side of Soccer</h2>
+      <p>
+        Every match carries two opposite emotions at once: the thrill of victory and the pain of defeat.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <img src="images/5.png" alt="Soccer player sitting alone after losing" />
+        <div class="card-content">
+          <h3>Heartbreak</h3>
+          <p>Defeat in soccer can feel deeply personal because players and fans invest so much emotion.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/6.png" alt="Fans crying and celebrating during a soccer match" />
+        <div class="card-content">
+          <h3>Fans Feel Everything</h3>
+          <p>Supporters do not just watch the game. They live every second of it with intense emotion.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/7.png" alt="People from different cultures playing soccer together" />
+        <div class="card-content">
+          <h3>A Global Language</h3>
+          <p>Soccer connects people across cultures, countries, and generations through a shared experience.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="quote">
+    <blockquote>
+      "Soccer is not just played - it is felt."
+    </blockquote>
+  </section>
+
+  <footer>
+    Created for a multimodal composition project using visual, linguistic, and spatial modes.
+  </footer>
+</body>
+</html>
