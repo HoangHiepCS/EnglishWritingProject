@@ -192,6 +192,55 @@
       font-size: 1rem;
     }
 
+    .video-section {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 24px;
+    }
+
+    .video-info {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-info h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 14px;
+      color: var(--accent);
+    }
+
+    .video-info p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
     .quote {
       text-align: center;
       padding: 100px 20px;
@@ -339,6 +388,38 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="section-header">
+      <h2>Understanding VAR Through Video Analysis</h2>
+      <p>
+        Video assistant technology has transformed modern soccer, but its impact on the game
+        continues to spark debate among players, fans, and commentators worldwide.
+      </p>
+    </div>
+    <div class="video-section">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/iCasaHQz2a8" 
+                title="Video Assistant Referee Explanation"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-info">
+        <h2>Learn More About VAR</h2>
+        <p>
+          This video provides an in-depth look at how Video Assistant Referee (VAR) technology 
+          works in modern football. Understanding the mechanics and impact of VAR helps us appreciate 
+          the complexity of fair play in soccer.
+        </p>
+        <p>
+          As discussed earlier, VAR represents the tension between technological fairness and the 
+          emotional experience of the game. By watching this video, you'll gain insights into how 
+          referees use this technology to make crucial decisions.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="quote">
     <blockquote>
       "Soccer is not just played - it is felt."
@@ -351,7 +432,7 @@
     </div>
     <div class="text-box">
       <ol style="color: var(--muted); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
-        <li>Video Assistant Referee (VAR) - Youtube: FIFA</li>
+        <li>FIFA. "Video Assistant Referee (VAR) - Explained." YouTube, <a href="https://www.youtube.com/watch?v=iCasaHQz2a8" style="color: var(--accent);" target="_blank">https://www.youtube.com/watch?v=iCasaHQz2a8</a>.</li>
         <li>International Football Association Board (IFAB). VAR Protocol and Guidelines. IFAB, <a href="https://www.theifab.com/laws/latest/video-assistant-referee-var-protocol/" style="color: var(--accent);" target="_blank">https://www.theifab.com/laws/latest/video-assistant-referee-var-protocol/</a>.</li>
         <li>Fédération Internationale de Football Association (FIFA). Video Assistant Referee (VAR). FIFA, <a href="https://www.fifa.com/technical/football-technology/var" style="color: var(--accent);" target="_blank">https://www.fifa.com/technical/football-technology/var</a>.</li>
         <li>Premier League. VAR Explained: How Video Assistant Referees Work. <a href="https://www.premierleague.com/var" style="color: var(--accent);" target="_blank">https://www.premierleague.com/var</a>.</li>
